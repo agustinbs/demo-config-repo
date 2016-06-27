@@ -82,7 +82,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}
+      defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}/eureka/
 ---
 spring:
   profiles: test
