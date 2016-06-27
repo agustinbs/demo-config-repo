@@ -88,6 +88,15 @@ security:
     resource:
       userInfoUri: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}}/uaa/user
   ignored: /catalog/**
+eureka:
+  instance:
+    prefer-ip-address: true
+#non-secure-port: 8181
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}/eureka/  
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 3000
