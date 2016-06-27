@@ -75,7 +75,7 @@ security:
       userInfoUri: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/user
     client:
       client-id: acme
-      access-token-uri: ${http://ONLINE_STORE_WEB_SERVICE_HOST}:${http://ONLINE_STORE_WEB_SERVICE_PORT}
+      access-token-uri: http://localhost:8787
   enable-csrf: false
   ignored: /api/**
 eureka:
@@ -89,7 +89,7 @@ eureka:
 ---
 spring:
   application:
-    name: shopping-cart-service
+    name: account-service
   profiles: test
   jpa:
     show_sql: false
