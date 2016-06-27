@@ -3,16 +3,6 @@ spring:
     active: development
 ---
 server:
-  contextPath: /uaa
-security:
-  user:
-    password: password
-  enable-csrf: false
-spring:
-  profiles: cloud
-security.ignored: /resources/**
----
-server:
   port: 8181
   contextPath: /uaa
 security:
@@ -64,6 +54,35 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
+---
+server:
+  port: 8181
+  contextPath: /uaa
+security:
+  user:
+    password: password
+  enable-csrf: false
+logging.level.org.springframework.security: DEBUG
+spring:
+  profiles: cloud
+  datasource:
+    url: jdbc:mysql://mysql-56-centos7-demo-online-shop.vagrant.f8:3306/dev?useSSL=false
+    username: root
+    password: dbpass
+    initialize: true
+#rabbitmq:
+#    host: 192.168.99.100
+#    port: 5672	
+security.ignored: /resources/**
+eureka:
+  instance:
+    prefer-ip-address: true
+#non-secure-port: 8181
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery-service-demo-online-shop.vagrant.f8
 ---
 spring:
   profiles: test
