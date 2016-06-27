@@ -66,7 +66,7 @@ logging.level.org.springframework.security: DEBUG
 spring:
   profiles: cloud
   datasource:
-    url: jdbc:mysql://mysql-56-centos7-demo-online-shop.vagrant.f8:3306/dev?useSSL=false
+    url: jdbc:mysql://${MYSQL_56_CENTOS7_SERVICE_HOST}:${MYSQL_56_CENTOS7_SERVICE_PORT}/dev?useSSL=false
     username: root
     password: dbpass
     initialize: true
@@ -82,7 +82,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://discovery-service-demo-online-shop.vagrant.f8
+      defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}
 ---
 spring:
   profiles: test
