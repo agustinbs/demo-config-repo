@@ -56,7 +56,7 @@ datasource:
     url: jdbc:mysql://${MYSQL_56_CENTOS7_SERVICE_HOST}:${MYSQL_56_CENTOS7_SERVICE_PORT}/dev?useSSL=false
     username: root
     password: dbpass
-    initialize: false
+    initialize: true
 security:
   oauth2:
     resource:
