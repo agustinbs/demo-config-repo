@@ -5,10 +5,10 @@ spring:
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
-    username: root
-    password: dbpass
-    initialize: false
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    username: admin
+    password: admin
+    initialize: true
   rabbitmq:
     host: 192.168.99.100
     port: 5672    
@@ -31,9 +31,9 @@ eureka:
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://mysql:3306/dev
-    username: root
-    password: dbpass
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    username: admin
+    password: admin
     initialize: true
 security:
   oauth2:
@@ -53,9 +53,9 @@ eureka:
 spring:
   profiles: cloud
   datasource:
-    url: jdbc:mysql://${MYSQL_56_CENTOS7_SERVICE_HOST}:${MYSQL_56_CENTOS7_SERVICE_PORT}/dev?useSSL=false
-    username: root
-    password: dbpass
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    username: admin
+    password: admin
     initialize: true
 security:
   oauth2:
