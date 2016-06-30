@@ -4,14 +4,14 @@ spring:
 ---
 spring:
   profiles: development
-  redis:
-    host: 192.168.99.100
-    port: 6379
+#redis:
+# host: 192.168.99.100
+# port: 6379
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/dev?useSSL=false
-    username: root
-    password: dbpass
-    initialize: false
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    username: admin
+    password: admin
+    initialize: true
   rabbitmq:
     host: 192.168.99.100
     port: 5672    	
@@ -28,13 +28,13 @@ eureka:
 ---
 spring:
   profiles: docker
-  redis:
-    host: redis
-    port: 6379
+#  redis:
+#    host: redis
+#    port: 6379
   datasource:
-    url: jdbc:mysql://mysql:3306/dev?useSSL=false
-    username: root
-    password: dbpass
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    username: admin
+    password: admin
     initialize: true
 eureka:
   instance:
@@ -47,9 +47,25 @@ eureka:
 ---
 spring:
   profiles: cloud
-  redis:
-    host: ${vcap.services.catalog-redis.credentials.hostname:localhost}
-    port: ${vcap.services.catalog-redis.credentials.port:6379}
+#  redis:
+#    host: ${vcap.services.catalog-redis.credentials.hostname:localhost}
+#    port: ${vcap.services.catalog-redis.credentials.port:6379}
+  datasource:
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    username: admin
+    password: admin
+    initialize: true
+# rabbitmq:
+#   host: 192.168.99.100
+#   port: 5672    	
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}/eureka/
 ---
 spring:
   profiles: test
