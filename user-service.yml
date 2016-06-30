@@ -13,7 +13,7 @@ logging.level.org.springframework.security: DEBUG
 spring:
   profiles: development
   datasource:
-    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/demo?useSSL=false
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: test
     password: test
     initialize: true
@@ -40,7 +40,7 @@ security:
 spring:
   profiles: docker
   datasource:
-    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/demo?useSSL=false
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: test
     password: test
     initialize: true
@@ -66,7 +66,7 @@ logging.level.org.springframework.security: DEBUG
 spring:
   profiles: cloud
   datasource:
-    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/demo?useSSL=false
+    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: test
     password: test
     initialize: true
