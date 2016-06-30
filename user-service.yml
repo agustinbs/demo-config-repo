@@ -66,7 +66,7 @@ logging.level.org.springframework.security: DEBUG
 spring:
   profiles: cloud
   datasource:
-    url: jdbc:mysql://${EXTERNAL_MYSQL_SERVICE_HOST}:${EXTERNAL_MYSQL_SERVICE_PORT}/demo?useSSL=false
+    url: jdbc:mysql://${EXTERNAL_MYSQL_SERVICE_SERVICE_HOST}:${EXTERNAL_MYSQL_SERVICE_SERVICE_HOST}/demo?useSSL=false
     username: test
     password: test
     initialize: true
