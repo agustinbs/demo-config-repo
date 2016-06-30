@@ -4,8 +4,8 @@ spring:
   profiles: development
   data:
     mongodb:
-      host: 192.168.99.100
-      port: 27017
+      host: ${MONGODB_SERVICE_HOST}
+      port: ${MONGODB_SERVICE_PORT}
   mvc:
     date-format: "YYYY-MM-dd"
   jackson:
@@ -63,8 +63,8 @@ spring:
   profiles: cloud
   data:
     mongodb:
-      host: ${vcap.services.order-db.credentials.hostname:localhost}
-      port: ${vcap.services.order-db.credentials.port:27017}
+      host: ${MONGODB_SERVICE_HOST}
+      port: ${MONGODB_SERVICE_PORT}
   mvc:
     date-format: "YYYY-MM-dd"
   jackson:
@@ -74,6 +74,16 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: ${vcap.services.user-service.credentials.uri:http://localhost:8181}/uaa/user
+      userInfoUri: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/user
     client:
-      client-id: acme
+      client-id: acme    
+      access-token-uri: http://localhost:8787
+eureka:
+  instance:
+    prefer-ip-address: true
+#non-secure-port: 8181
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}/eureka/
