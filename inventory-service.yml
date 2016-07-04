@@ -1,16 +1,10 @@
 spring.profiles.active: development
 ---
 spring:
-  profiles: cloud
-  neo4j:
-    host: ${SPRING_NEO4J_HOST:192.168.99.100}
-    port: ${SPRING_NEO4J_PORT:7474}
----
-spring:
   profiles: development
   neo4j:
-    host: ${SPRING_NEO4J_HOST:192.168.99.100}
-    port: ${SPRING_NEO4J_PORT:7474}
+    host: ${NEO4J_SERVICE_HOST}
+    port: ${NEO4J_SERVICE_PORT}
   rabbitmq:
     host: 192.168.99.100
     port: 5672    
@@ -38,10 +32,16 @@ eureka:
       defaultZone: http://discovery-service:8761/eureka/
 ---
 spring:
-  profiles: test
+  profiles: cloud
   neo4j:
     host: ${SPRING_NEO4J_HOST:192.168.99.100}
     port: ${SPRING_NEO4J_PORT:7474}
+---
+spring:
+  profiles: test
+  neo4j:
+    host: ${NEO4J_SERVICE_HOST:localhost}
+    port: ${NEO4J_SERVICE_PORT:7474}
 eureka:
   client:
     enabled: false
