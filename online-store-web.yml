@@ -84,17 +84,17 @@ zuul:
       url: http://${EDGE_SERVICE_SERVICE_HOST}:${EDGE_SERVICE_SERVICE_PORT}
     auth-service:
       path: /user/**
-      url: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/user
+      url: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
     user-service:
       path: /users/**
 security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri:${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/user
+      userInfoUri:http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
     client:
-      accessTokenUri: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/oauth/token
-      userAuthorizationUri: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/oauth/authorize
+      accessTokenUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/oauth/token
+      userAuthorizationUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
   ignored: /assets/**
