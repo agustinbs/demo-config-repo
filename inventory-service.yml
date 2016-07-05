@@ -3,8 +3,8 @@ spring.profiles.active: development
 spring:
   profiles: development
   neo4j:
-    host: ${NEO4J_SERVICE_HOST}
-    port: ${NEO4J_SERVICE_PORT}
+    host: ${NEO4J_SERVICE_HOST:localhost}
+    port: ${NEO4J_SERVICE_PORT:7474}
   rabbitmq:
     host: 192.168.99.100
     port: 5672    
@@ -36,6 +36,14 @@ spring:
   neo4j:
     host: ${NEO4J_SERVICE_HOST:localhost}
     port: ${NEO4J_SERVICE_PORT:7474}
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}/eureka/
 ---
 spring:
   profiles: test
