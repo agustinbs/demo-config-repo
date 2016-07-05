@@ -93,7 +93,7 @@ security:
     resource:
       userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
     client:
-      accessTokenUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/token
+      accessTokenUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/oauth/token
       userAuthorizationUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
