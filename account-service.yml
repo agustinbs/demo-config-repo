@@ -60,10 +60,10 @@ spring:
 security:
   oauth2:
     resource:
-      userInfoUri: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/user
+      userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
     client:
       client-id: acme    
-      access-token-uri: http://localhost:8787
+      access-token-uri: http://${ORDER_SERVICE_SERVICE_HOST}:${ORDER_SERVICE_SERVICE_PORT}
 eureka:
   instance:
     prefer-ip-address: true
