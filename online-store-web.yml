@@ -91,7 +91,7 @@ security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://user-service-demo-online-shop.vagrant.f8/uaa/user
+      userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
     client:
       accessTokenUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/token
       userAuthorizationUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/authorize
