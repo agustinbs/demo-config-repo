@@ -91,10 +91,10 @@ security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+      userInfoUri: http://user-service-demo-online-shop.vagrant.f8/uaa/user
     client:
-      accessTokenUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/oauth/token
-      userAuthorizationUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/oauth/authorize
+      accessTokenUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/token
+      userAuthorizationUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
   ignored: /assets/**
