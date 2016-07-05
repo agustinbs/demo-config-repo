@@ -6,6 +6,9 @@ spring:
     mongodb:
       host: ${MONGODB_SERVICE_HOST}
       port: ${MONGODB_SERVICE_PORT}
+      username: test
+      password: test
+      db: orders
   mvc:
     date-format: "YYYY-MM-dd"
   jackson:
@@ -65,6 +68,9 @@ spring:
     mongodb:
       host: ${MONGODB_SERVICE_HOST}
       port: ${MONGODB_SERVICE_PORT}
+      user: test
+      password: test
+      db: orders	  
   mvc:
     date-format: "YYYY-MM-dd"
   jackson:
