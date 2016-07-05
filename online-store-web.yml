@@ -81,10 +81,10 @@ zuul:
   routes:
     edge-service:
       path: /api/**
-      url: http://${EDGE_SERVICE_SERVICE_HOST}:${EDGE_SERVICE_SERVICE_PORT}
+      url: http://edge-service-demo-online-shop.vagrant.f8/
     auth-service:
       path: /user/**
-      url: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+      url: http://user-service-demo-online-shop.vagrant.f8/uaa/user
     user-service:
       path: /users/**
 security:
