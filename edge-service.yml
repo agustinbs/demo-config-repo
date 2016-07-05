@@ -86,7 +86,7 @@ zuul:
 security:
   oauth2:
     resource:
-      userInfoUri: ${http://USER_SERVICE_SERVICE_HOST}:${http://USER_SERVICE_SERVICE_PORT}/uaa/user
+      userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
   ignored: /catalog/**
 eureka:
   instance:
