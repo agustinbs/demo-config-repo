@@ -36,6 +36,10 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/  
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 9000
+  ReadTimeout: 60000
 ---
 spring:
   profiles: docker
@@ -67,7 +71,7 @@ eureka:
       defaultZone: http://discovery-service:8761/eureka/
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
-  ConnectTimeout: 3000
+  ConnectTimeout: 9000
   ReadTimeout: 60000
 ---
 spring:
@@ -99,5 +103,5 @@ eureka:
       defaultZone: http://${DISCOVERY_SERVICE_SERVICE_HOST}:${DISCOVERY_SERVICE_SERVICE_PORT}/eureka/  
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
-  ConnectTimeout: 3000
+  ConnectTimeout: 9000
   ReadTimeout: 60000
