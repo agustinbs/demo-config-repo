@@ -95,7 +95,6 @@ security:
 eureka:
   instance:
     prefer-ip-address: true
-#non-secure-port: 8181
   client:
     registerWithEureka: true
     fetchRegistry: true
