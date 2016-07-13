@@ -16,13 +16,12 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+    leaseRenewalIntervalSeconds: 10
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://${DISCOVERY_SERVICE_REPLICA_SERVICE_HOST}:${DISCOVERY_SERVICE_REPLICA_SERVICE_PORT}/eureka/
-  instance:
-    leaseRenewalIntervalSeconds: 10
   server:
       waitTimeInMsWhenSyncEmpty: 0
 ---
@@ -31,6 +30,7 @@ spring:
 eureka:
   instance:
     prefer-ip-address: true
+    leaseRenewalIntervalSeconds: 10
   client:
     registerWithEureka: true
     fetchRegistry: true
