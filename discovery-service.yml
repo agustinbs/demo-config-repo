@@ -1,8 +1,8 @@
+server:
+  port: 8761
 spring:
   profiles:
     active: development
-server:
-  port: 8761
 ---
 spring:
   profiles: development
@@ -37,6 +37,6 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}/eureka/
+      defaultZone: http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/
   server:
       waitTimeInMsWhenSyncEmpty: 0
