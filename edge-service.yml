@@ -11,7 +11,7 @@ spring:
     port: 5672
 sleuth:
     sampler:
-      percentage: 1.0     	
+      percentage: 1.0
 zuul:
   ignored-services: '*'
   ignoredPatterns: /**/api/**
