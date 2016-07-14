@@ -25,6 +25,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 #graphite.host: 192.168.99.100
 #graphite.port: 2003
+server:
+  port: 7001
 ---
 spring:
   profiles: docker
@@ -44,6 +46,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
+server:
+  port: 7001
 ---
 spring:
   profiles: cloud
@@ -66,6 +70,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
+server:
+  port: 8080
 ---
 spring:
   profiles: test
@@ -76,3 +82,5 @@ spring:
     database: H2
   datasource:
     initialize: false
+server:
+  port: 7001
