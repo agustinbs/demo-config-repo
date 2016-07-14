@@ -1,4 +1,6 @@
-spring.profiles.active: development
+spring:
+  profiles:
+    active: development
 ---
 spring:
   profiles: development
@@ -16,6 +18,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+server:
+  port: 7002	  
 ---
 spring:
   profiles: docker
@@ -30,6 +34,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
+server:
+  port: 7002	  
 ---
 spring:
   profiles: cloud
@@ -44,6 +50,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
      defaultZone: http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
+server:
+  port: 8080	 
 ---
 spring:
   profiles: test
@@ -53,3 +61,5 @@ spring:
 eureka:
   client:
     enabled: false
+server:
+  port: 7002	
