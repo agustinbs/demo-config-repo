@@ -81,20 +81,24 @@ zuul:
   routes:
     edge-service:
       path: /api/**
-      url: http://${EDGE_SERVICE_SERVICE_HOST}:${EDGE_SERVICE_SERVICE_PORT}
+#url: http://${EDGE_SERVICE_SERVICE_HOST}:${EDGE_SERVICE_SERVICE_PORT}
+     url: http://edge-service
     auth-service:
       path: /user/**
-      url: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+#url: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+    url: http://user-service/uaa/user
     user-service:
       path: /users/**
 security:
   enable-csrf: false
   oauth2:
     resource:
-      userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+#userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+    userInfoUri: http://user-service/uaa/user
     client:
-      accessTokenUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/oauth/token
-      userAuthorizationUri: http://user-service-demo-online-shop.vagrant.f8:80/uaa/oauth/authorize
+#accessTokenUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/oauth/token
+      accessTokenUri: http://user-service/uaa/oauth/token
+      userAuthorizationUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
   ignored: /assets/**
@@ -105,4 +109,5 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
+      defaultZone: #http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
+      http://discovery-service-peer1/eureka/,http://discovery-service-peer2/eureka/
