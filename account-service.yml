@@ -53,17 +53,20 @@ eureka:
 spring:
   profiles: cloud
   datasource:
-    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+#   url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    url: jdbc:mysql://mysql.openshift-infra:3306/mysqldb?useSSL=false
     username: admin
     password: admin
     initialize: true
 security:
   oauth2:
     resource:
-      userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+#userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
+      userInfoUri: http://user-service/uaa/user
     client:
       client-id: acme    
-      access-token-uri: http://${ORDER_SERVICE_SERVICE_HOST}:${ORDER_SERVICE_SERVICE_PORT}
+#access-token-uri: http://${ORDER_SERVICE_SERVICE_HOST}:${ORDER_SERVICE_SERVICE_PORT}
+      access-token-uri: http://order-service
 eureka:
   instance:
     prefer-ip-address: true
@@ -71,7 +74,8 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
+      defaultZone: http://discovery-service-peer1/eureka/,http://discovery-service-peer2/eureka/
+#http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
 ---
 spring:
   application:
