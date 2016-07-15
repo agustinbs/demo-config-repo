@@ -39,6 +39,9 @@ server:
 ---
 spring:
   profiles: cloud
+  neo4j:
+    host: ${NEO4J_SERVICE_HOST:localhost}
+    port: ${NEO4J_SERVICE_PORT:7474}  
 eureka:
   instance:
     prefer-ip-address: true
