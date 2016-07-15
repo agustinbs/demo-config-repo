@@ -82,11 +82,11 @@ zuul:
     edge-service:
       path: /api/**
 #url: http://${EDGE_SERVICE_SERVICE_HOST}:${EDGE_SERVICE_SERVICE_PORT}
-     url: http://edge-service
+      url: http://edge-service
     auth-service:
       path: /user/**
 #url: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
-    url: http://user-service/uaa/user
+      url: http://user-service/uaa/user
     user-service:
       path: /users/**
 security:
