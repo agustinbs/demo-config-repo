@@ -94,7 +94,7 @@ security:
   oauth2:
     resource:
 #userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
-    userInfoUri: http://user-service/uaa/user
+      userInfoUri: http://user-service/uaa/user
     client:
 #accessTokenUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/oauth/token
       accessTokenUri: http://user-service/uaa/oauth/token
