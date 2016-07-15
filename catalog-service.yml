@@ -55,7 +55,8 @@ spring:
 #    host: ${vcap.services.catalog-redis.credentials.hostname:localhost}
 #    port: ${vcap.services.catalog-redis.credentials.port:6379}
   datasource:
-    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+#    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
+    url: jdbc:mysql://mysql.openshift-infra:3306/mysqldb?useSSL=false
     username: admin
     password: admin
     initialize: true
