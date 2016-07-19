@@ -1,5 +1,3 @@
-server:
-  port: 8761
 spring:
   profiles:
     active: development
@@ -12,6 +10,8 @@ eureka:
     fetchRegistry: false
   server:
       waitTimeInMsWhenSyncEmpty: 0
+server:
+  port: 8761
 ---
 spring:
   profiles: peer1
@@ -27,6 +27,8 @@ eureka:
       defaultZone: http://discovery-service-peer2/eureka/
   server:
       waitTimeInMsWhenSyncEmpty: 0
+server:
+  port: 8080
 ---
 spring:
   profiles: peer2
@@ -42,3 +44,5 @@ eureka:
       defaultZone: http://discovery-service-peer1/eureka/
   server:
       waitTimeInMsWhenSyncEmpty: 0
+server:
+  port: 8080

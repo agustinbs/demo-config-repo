@@ -40,6 +40,8 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 9000
   ReadTimeout: 60000
+server:
+  port: 9999  
 ---
 spring:
   profiles: docker
@@ -73,6 +75,8 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 9000
   ReadTimeout: 60000
+server:
+  port: 9999  
 ---
 spring:
   profiles: cloud
@@ -106,3 +110,5 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 9000
   ReadTimeout: 60000
+server:
+  port: 8080

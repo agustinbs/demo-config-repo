@@ -4,9 +4,6 @@ spring:
 ---
 spring:
   profiles: development
-#redis:
-# host: 192.168.99.100
-# port: 6379
   datasource:
     url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: admin
@@ -30,9 +27,6 @@ server:
 ---
 spring:
   profiles: docker
-#  redis:
-#    host: redis
-#    port: 6379
   datasource:
     url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: admin
@@ -51,9 +45,6 @@ server:
 ---
 spring:
   profiles: cloud
-#  redis:
-#    host: ${vcap.services.catalog-redis.credentials.hostname:localhost}
-#    port: ${vcap.services.catalog-redis.credentials.port:6379}
   datasource:
 #    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     url: jdbc:mysql://mysql.openshift-infra:3306/mysqldb?useSSL=false
@@ -77,9 +68,6 @@ server:
 ---
 spring:
   profiles: test
-  redis:
-    host: localhost
-    port: 6379
   jpa:
     database: H2
   datasource:
