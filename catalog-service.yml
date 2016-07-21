@@ -25,7 +25,7 @@ eureka:
 server:
   port: 7001
 logging:
-  config: log-cloud.xml
+  config: classpath:log-cloud.xml
 ---
 spring:
   profiles: docker
