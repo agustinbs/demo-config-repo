@@ -8,7 +8,7 @@ spring:
     url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: admin
     password: admin
-    initialize: true
+    initialize: false
   rabbitmq:
     host: 192.168.99.100
     port: 5672    
@@ -36,7 +36,7 @@ spring:
     url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: admin
     password: admin
-    initialize: true
+    initialize: false
 security:
   oauth2:
     resource:
@@ -68,7 +68,7 @@ spring:
     min-evictable-idle-time-millis: 60000
     username: admin
     password: admin
-    initialize: true
+    initialize: false
 security:
   oauth2:
     resource:

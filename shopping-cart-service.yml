@@ -7,7 +7,7 @@ spring:
   jpa:
     show_sql: false
     database: MYSQL
-    generate-ddl: true
+    generate-ddl: false
   datasource:
     url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: admin
@@ -40,7 +40,7 @@ spring:
   jpa:
     show_sql: false
     database: MYSQL
-    generate-ddl: true
+    generate-ddl: false
   datasource:
     url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     username: admin
@@ -68,7 +68,7 @@ spring:
   jpa:
     show_sql: false
     database: MYSQL
-    generate-ddl: true 
+    generate-ddl: false 
   datasource:
     url: jdbc:mysql://mysql.openshift-infra:3306/mysqldb?useSSL=false
     driverClassName: com.mysql.jdbc.Driver
