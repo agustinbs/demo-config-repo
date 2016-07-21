@@ -46,8 +46,15 @@ server:
 spring:
   profiles: cloud
   datasource:
-#    url: jdbc:mysql://${MYSQL_SERVICE_HOST}:${MYSQL_SERVICE_PORT}/mysqldb?useSSL=false
     url: jdbc:mysql://mysql.openshift-infra:3306/mysqldb?useSSL=false
+    driverClassName: com.mysql.jdbc.Driver
+    maxActive: 10
+    maxIdle: 5
+    test-while-idle: true
+    test-on-borrow: true
+    validation-query: SELECT 1
+    time-between-eviction-runs-millis: 5000
+    min-evictable-idle-time-millis: 60000
     username: admin
     password: admin
     initialize: true
@@ -62,7 +69,6 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service-peer1/eureka/,http://discovery-service-peer2/eureka/
-#http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
 server:
   port: 8080
 ---

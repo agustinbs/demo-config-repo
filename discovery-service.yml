@@ -23,7 +23,6 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
- #defaultZone: http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
       defaultZone: http://discovery-service-peer2/eureka/
   server:
       waitTimeInMsWhenSyncEmpty: 0
@@ -40,7 +39,6 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-#defaultZone: http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/
       defaultZone: http://discovery-service-peer1/eureka/
   server:
       waitTimeInMsWhenSyncEmpty: 0

@@ -73,8 +73,6 @@ spring:
   profiles: cloud
   data:
     mongodb:
-#      host: ${MONGODB_SERVICE_HOST}
-#      port: ${MONGODB_SERVICE_PORT}
       host: mongodb.openshift-infra
       port: 27017
       username: test
@@ -89,11 +87,9 @@ spring:
 security:
   oauth2:
     resource:
-#userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
       userInfoUri: http://user-service/uaa/user
     client:
       client-id: acme    
-#access-token-uri: http://${ORDER_SERVICE_SERVICE_HOST}:${ORDER_SERVICE_SERVICE_PORT}
       access-token-uri: http://order-service
 eureka:
   instance:
@@ -104,6 +100,5 @@ eureka:
     fetchRegistry: true
     serviceUrl:
      defaultZone: http://discovery-service-peer1/eureka/,http://discovery-service-peer2/eureka/
-#http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
 server:
   port: 8080

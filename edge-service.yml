@@ -94,7 +94,6 @@ zuul:
 security:
   oauth2:
     resource:
-#userInfoUri: http://${USER_SERVICE_SERVICE_HOST}:${USER_SERVICE_SERVICE_PORT}/uaa/user
       userInfoUri: http://user-service/uaa/user
   ignored: /catalog/**
 eureka:
@@ -105,7 +104,6 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service-peer1/eureka/,http://discovery-service-peer2/eureka/
-#http://${DISCOVERY_SERVICE_PEER1_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER1_SERVICE_PORT}/eureka/,http://${DISCOVERY_SERVICE_PEER2_SERVICE_HOST}:${DISCOVERY_SERVICE_PEER2_SERVICE_PORT}/eureka/
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
 ribbon:
   ConnectTimeout: 9000
