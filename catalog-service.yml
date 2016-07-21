@@ -24,8 +24,6 @@ eureka:
 #graphite.port: 2003
 server:
   port: 7001
-logging:
-  config: classpath:log-cloud.xml
 ---
 spring:
   profiles: docker
