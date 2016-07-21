@@ -90,6 +90,8 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://discovery-service-peer1/eureka/,http://discovery-service-peer2/eureka/
+logging:
+  config: classpath:log-cloud.xml
 ---
 spring:
   profiles: test

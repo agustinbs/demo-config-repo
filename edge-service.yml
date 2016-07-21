@@ -110,3 +110,5 @@ ribbon:
   ReadTimeout: 60000
 server:
   port: 8080
+logging:
+  config: classpath:log-cloud.xml

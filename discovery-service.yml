@@ -28,6 +28,8 @@ eureka:
       waitTimeInMsWhenSyncEmpty: 0
 server:
   port: 8080
+logging:
+  config: classpath:log-cloud.xml  
 ---
 spring:
   profiles: peer2
@@ -44,3 +46,5 @@ eureka:
       waitTimeInMsWhenSyncEmpty: 0
 server:
   port: 8080
+logging:
+  config: classpath:log-cloud.xml

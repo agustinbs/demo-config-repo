@@ -40,3 +40,5 @@ eureka:
       defaultZone: http://discovery-service-peer1/eureka/,http://discovery-service-peer2/eureka/
 server:
   port: 8080
+logging:
+  config: classpath:log-cloud.xml
