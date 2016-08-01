@@ -98,7 +98,7 @@ security:
       userInfoUri: http://user-service/uaa/user
     client:
       accessTokenUri: http://user-service/uaa/oauth/token
-      userAuthorizationUri: http://user-service-demo-online-shop.vagrant.f8/uaa/oauth/authorize
+      userAuthorizationUri: http://user-service/uaa/oauth/authorize
       clientId: acme
       clientSecret: acmesecret
   ignored: /assets/**
